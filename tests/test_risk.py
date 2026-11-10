@@ -60,6 +60,6 @@ def test_zero_daily_usage_does_not_return_fake_stock_duration():
         expected_delay_days=0,
     )
 
-    assert result["days_of_stock_left"] == float("inf")
+    assert result["days_of_stock_left"] is None
     assert result["risk_level"] == "LOW"
     assert result["suggested_order_quantity"] == 0
