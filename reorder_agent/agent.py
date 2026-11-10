@@ -129,7 +129,7 @@ def calculate_risk(
         )
 
     return {
-        "days_of_stock_left": round(days_left, 1),
+        "days_of_stock_left": round(days_left, 1) if daily_usage > 0 else None,
         "days_until_new_order_arrives": arrival_days,
         "risk_level": risk,
         "suggested_order_quantity": suggested_qty,
